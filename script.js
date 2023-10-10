@@ -1,3 +1,4 @@
+// Select all needed elements
 const headerBg = document.querySelectorAll('.header-bg span');
 const phone = document.querySelector('.phone');
 const upArrow = document.getElementById('arrow-up');
@@ -17,14 +18,16 @@ const moveCaseDown = document.querySelector('.btn-arrow-down');
 const moveBandRight = document.querySelector('.btn-arrow-right');
 const moveBandLeft = document.querySelector('.btn-arrow-left');
 
+// Set the global variables
 let upDisplacement = 13.5;
 let leftDisplacement = -13.5;
 let count = 0;
 let x = 0;
 let y = 0;
 let z = 0;
-let intervalID;
+let rotateIntervalId;
 
+// Interval function to continuously change the header bg
 setInterval(() => {
    if (count === headerBg.length - 1) {
       headerBg[count].classList.remove('show-img');
@@ -37,14 +40,17 @@ setInterval(() => {
    }
 }, 20000);
 
+// function to continuously turn the phone in y-axis
 function turnPhone() {
-   intervalID = setInterval(() => {
+   rotateIntervalId = setInterval(() => {
       if (y >= 360) y = 0;
       phone.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg)`;
       y++;
    }, 100);
 }
-// turnPhone();
+turnPhone();
+
+// Phone cube controlls
 upArrow.addEventListener('click', () => {
    x += 20;
    phone.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg)`;
@@ -79,11 +85,11 @@ bottomRightArrow.addEventListener('click', () => {
 });
 
 controls.addEventListener('mouseover', () => {
-   clearInterval(intervalID);
+   clearInterval(rotateIntervalId);
 });
 controls.addEventListener('mouseleave', turnPhone);
 
-// Laptop display section
+// Function to animate Laptop when scrolled to the point
 window.onscroll = function () {
    if (window.scrollY >= laptopSection.offsetTop - 150) {
       laptopSection.classList.add('change');
