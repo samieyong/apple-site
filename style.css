@@ -64,25 +64,36 @@ section {
    opacity: 0;
    transition: opacity 2s;
 }
+
 .header-bg span:nth-child(1) {
    background: linear-gradient(rgba(2, 250, 238, 0.4), rgba(2, 247, 247, 0.4)),
-      url(./images/slideshow/section-1-bg-1.jpg);
+      url(./images/slideshow/section-1-bg-1.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
 }
 .header-bg span:nth-child(2) {
    background: linear-gradient(rgba(2, 250, 238, 0.4), rgba(3, 248, 248, 0.4)),
-      url(./images/slideshow/section-1-bg-2.jpg);
+      url(./images/slideshow/section-1-bg-2.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
 }
 .header-bg span:nth-child(3) {
    background: linear-gradient(rgba(2, 250, 238, 0.4), rgba(3, 248, 248, 0.4)),
-      url(./images/slideshow/section-1-bg-3.jpg);
+      url(./images/slideshow/section-1-bg-3.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
 }
 .header-bg span:nth-child(4) {
    background: linear-gradient(rgba(2, 250, 238, 0.4), rgba(3, 248, 248, 0.4)),
-      url(./images/slideshow/section-1-bg-1.jpg);
+      url(./images/slideshow/section-1-bg-1.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
 }
 .header-bg span:nth-child(5) {
    background: linear-gradient(rgba(2, 250, 238, 0.2), rgba(3, 248, 248, 0.4)),
-      url(./images/slideshow/section-1-bg-5.jpg);
+      url(./images/slideshow/section-1-bg-5.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
 }
 
 .header-bg .show-img {
