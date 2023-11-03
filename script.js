@@ -90,11 +90,18 @@ controls.addEventListener('mouseover', () => {
 controls.addEventListener('mouseleave', turnPhone);
 
 // Function to animate Laptop when scrolled to the point
-window.onscroll = function () {
-   if (window.scrollY >= laptopSection.offsetTop - 150) {
+const laptopAnimate = function (entries, observer) {
+   const [entry] = entries;
+   if (entry.isIntersecting) {
       laptopSection.classList.add('change');
+      observer.unobserve(entry.target);
    }
 };
+const laptopSectionObserver = new IntersectionObserver(laptopAnimate, {
+   root: null,
+   threshold: 0.6,
+});
+laptopSectionObserver.observe(laptopSection);
 
 // Watch Section control buttons
 moveCaseUp.addEventListener('click', () => {
